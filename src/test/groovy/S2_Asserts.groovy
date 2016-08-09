@@ -8,15 +8,15 @@ import spock.lang.Specification
 @Ignore("Comment to check the errors")
 class S2_Asserts extends Specification {
 
-    void 'should fail with numbers'() {
-        expect:
-        2 * 3 == 5 * 4
-    }
-
     void 'should verify similarity word'() {
         expect:
         'Hello World' == 'hello world'
         //'Hello World' == 'jellou guorld'
+    }
+
+    void 'should fail with numbers'() {
+        expect:
+        2 * 3 == 5 * 4
     }
 
     void 'should get map values'() {

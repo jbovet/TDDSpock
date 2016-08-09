@@ -88,4 +88,41 @@ class S1_Basic extends Specification {
         os.collect { it.size() }.max() == 9
         os.collect { it.size() }.min() == 3
     }
+
+
+    void 'should list contain a number'() {
+        given:
+        def list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+
+        expect:
+        list.contains(55)
+    }
+
+    void 'should number added to list'() {
+        given:
+        def list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+
+        when:
+        list << 233
+
+        then:
+        list.contains(233)
+    }
+
+
+    void 'should verify some asserts'() {
+        given:
+        def os = ['Java', 'Groovy', 'Swift', 'C', 'C++']
+
+        when:
+        os << 'C#'
+
+        then:
+        os.size() == 6
+        os.sort() == ['C', 'C#', 'C++', 'Groovy', 'Java', 'Swift']
+        old(os.reverse()) == ['C++', 'C', 'Swift', 'Groovy', 'Java']
+        os.min { it.length() } == 'C'
+        os.max { it.length() } == 'Groovy'
+    }
+
 }
