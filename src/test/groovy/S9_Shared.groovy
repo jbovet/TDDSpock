@@ -11,17 +11,17 @@ class S9_Shared extends Specification {
     def user = new User('Jose Bovet', 30, 'jose.bovet@gmail.com')
 
     void 'should get name'() {
-        expect:
-        println user.name
+        expect: 'name Jose Bovet'
+        user.name == 'Jose Bovet'
     }
 
     void 'should get email'() {
-        expect:
-        println user.email
+        expect: 'email jose.bovet@gmail.com'
+        user.email == 'jose.bovet@gmail.com'
     }
 
     void 'should get age'() {
-        expect:
-        println user.age
+        expect: 'age 30'
+        user.age == 30
     }
 }

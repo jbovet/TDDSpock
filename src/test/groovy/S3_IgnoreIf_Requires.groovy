@@ -3,8 +3,6 @@ import spock.lang.Requires
 import spock.lang.Specification
 import spock.util.environment.Jvm
 import spock.util.environment.OperatingSystem
-
-
 /**
  * Created by josebovet on 8/1/16.
  */
@@ -42,5 +40,4 @@ class S3_IgnoreIf_Requires extends Specification {
         expect:
         true
     }
-
 }
