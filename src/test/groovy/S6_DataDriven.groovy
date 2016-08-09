@@ -59,17 +59,4 @@ class S6_DataDriven extends Specification {
         b << [1, 9]
         c << [5, 9]
     }
-
-
-    def "should add user"() {
-        given: "usuario service"
-        def usuarioService = Mock(UsuarioService)
-
-        when:
-        usuarioService.addUser("pepe")
-
-        then:
-        1 * usuarioService.addUser("pepe")
-    }
-
 }
